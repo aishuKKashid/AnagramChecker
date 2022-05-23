@@ -5,25 +5,25 @@ import io.kotest.matchers.shouldHave
 
 class AnagramCheckerTest : StringSpec() {
     init {
-        "is 'a' an anagram of 'a'" {
+        "should return true if 'a' an anagram of 'a'" {
             AnagramChecker().match("a", "a").shouldBeTrue()
         }
-        "is 'a' not an anagram of 'b'" {
+        "should return false if 'a' not an anagram of 'b'" {
             AnagramChecker().match("a", "b").shouldBeFalse()
         }
-        "is 'dog' an anagram of 'god'" {
+        "should return true if 'dog' an anagram of 'god'" {
             AnagramChecker().match("dog", "god").shouldBeTrue()
         }
-        " is 'abcd' is not an anagram of 'bs'" {
+        "should return false if̦ 'abcd' is not an anagram of 'bs'" {
             AnagramChecker().match("abcd", "bc").shouldBeFalse()
         }
         "should not have empty string inputs" {
             AnagramChecker().match("", "").shouldBeFalse()
         }
-        "should match the a and 'A'" {
+        "should return true if 'a' is an anagram of 'A'" {
             AnagramChecker().match("a", "A").shouldBeTrue()
         }
-        "is 'a' is not an anagram of 'aa'" {
+        "should return false if 'a' is not an anagram of 'aa'" {
             AnagramChecker().match("a", "aaa").shouldBeFalse()
         }
     }
